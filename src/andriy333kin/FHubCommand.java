@@ -16,16 +16,16 @@ public class FHubCommand extends Command {
 	@Override
 	public void execute(CommandSender arg0, String[] arg1) {
 		if(arg1.length > 1 || arg1.length == 1) {
-			arg0.sendMessage(ChatColor.RED + "Тут не треба якихось додаткових аргументів");
+			arg0.sendMessage(ChatColor.RED + "Г’ГіГІ Г­ГҐ ГІГ°ГҐГЎГ  ГїГЄГЁГµГ®Г±Гј Г¤Г®Г¤Г ГІГЄГ®ГўГЁГµ Г Г°ГЈГіГ¬ГҐГ­ГІВіГў");
 			return;
 		}		
 		String nick = arg0.getName();
 		ProxiedPlayer player = ProxyServer.getInstance().getPlayer(nick);
 		if (player == null) {
-			arg0.sendMessage(ChatColor.RED + "Ви не можете користуватися цією командою з консолі");
+			arg0.sendMessage(ChatColor.RED + "Г‚ГЁ Г­ГҐ Г¬Г®Г¦ГҐГІГҐ ГЄГ®Г°ГЁГ±ГІГіГўГ ГІГЁГ±Гї Г¶ВіВєГѕ ГЄГ®Г¬Г Г­Г¤Г®Гѕ Г§ ГЄГ®Г­Г±Г®Г«Ві");
 			return;
 		}
-		ProxyServer.getInstance().getPluginManager().dispatchCommand(ProxyServer.getInstance().getConsole(), "send " + nick + " lobby");
+		ProxyServer.getInstance().getPluginManager().dispatchCommand(ProxyServer.getInstance().getConsole(), "send " + nick + " lobby"); // Convert
 	}
 
 }
