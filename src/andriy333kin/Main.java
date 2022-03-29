@@ -16,7 +16,6 @@ import net.md_5.bungee.api.plugin.Plugin;
 import net.md_5.bungee.event.EventHandler;
 
 public class Main extends Plugin implements Listener{
-    @SuppressWarnings("deprecation")
 
     public String host;
     public String port;
@@ -34,10 +33,10 @@ public class Main extends Plugin implements Listener{
     public void onEnable() {
         getLogger().info("Im loading");
         getProxy();
-	ProxyServer.getInstance().getPluginManager().registerListener(this, this);
-	ProxyServer.getInstance().getPluginManager().registerCommand(this, new FHubCommand(this));
-	getLogger().info("I was loaded");
-	new Thread(() -> {
+	    ProxyServer.getInstance().getPluginManager().registerListener(this, this);
+	    ProxyServer.getInstance().getPluginManager().registerCommand(this, new FHubCommand(this));
+	    getLogger().info("I was loaded");
+	    new Thread(() -> {
 	    	 try { 
 	    	      StringBuilder result = new StringBuilder();
 	    	      URL url = new URL("https://api.exaroton.com/v1/servers/" + serverid + "/start/");
@@ -104,11 +103,12 @@ public class Main extends Plugin implements Listener{
 	    	}).start();
     }
 
-    @EventHandler
+    @SuppressWarnings("deprecation")
+	@EventHandler
     public void onServerSwitch(ServerSwitchEvent event) {
     	String s = event.getPlayer().getServer().getInfo().getName();
     	if (s == "duels") {
-    		event.getPlayer().sendMessage(ChatColor.YELLOW + "Будь ласка зачекайте сервер дуелей запускається...");
+    		event.getPlayer().sendMessage(ChatColor.YELLOW + "Р‘СѓРґСЊ Р»Р°СЃРєР° Р·Р°С‡РµРєР°Р№С‚Рµ СЃРµСЂРІРµСЂ РґСѓРµР»РµР№ Р·Р°РїСѓСЃРєР°С”С‚СЊСЃСЏ...");
     		event.getPlayer().sendMessage(ChatColor.YELLOW + "Please wait the duels server is loading...");
     		new Thread(() -> {
     	    	 try { 
@@ -177,7 +177,7 @@ public class Main extends Plugin implements Listener{
     	    	}).start();
     	}
     }
-    
+
     @EventHandler
     public void onPostLogin(PostLoginEvent event) {
     	new Thread(() -> {
@@ -206,7 +206,7 @@ public class Main extends Plugin implements Listener{
         	      for (String line1; (line1 = reader1.readLine()) != null; ) {
         	              result1.append(line1);
         	              String segments[] = result1.toString().split(",");
-        	              for (int i1 = 0; i1<30; i1++) {
+        	              for (int i1 = 0; i1 < 30; i1++) {
         	            	  try {
         	            	   if(i1 > 15) {
         	            		  c = c + 1;
@@ -221,7 +221,7 @@ public class Main extends Plugin implements Listener{
         	            	    	  finalport = port1;
         	            	    	  getLogger().info(finalport);
         	            	      };
-        	            	      if (!(finalhost ==null) || !(finalport ==null)) {
+        	            	      if (!(finalhost == null) || !(finalport == null)) {
         	            	    	    InetSocketAddress socketAddress = new InetSocketAddress(finalhost, 54138);
         	            	    	    ServerInfo info = ProxyServer.getInstance().constructServerInfo("duels", socketAddress, "ac", false);
         	            	    	    ProxyServer.getInstance().getServers().put("duels", info);
