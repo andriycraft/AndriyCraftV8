@@ -62,10 +62,10 @@ public class Main extends Plugin implements Listener{
 	        	      for (String line1; (line1 = reader1.readLine()) != null; ) {
 	        	              result1.append(line1);
 	        	              String segments[] = result1.toString().split(",");
-	        	              for (int i1 = 0; i1<30; i1++) {
+	        	               for (int i1 = 0; i1<30; i1++) {
 	        	            	  try {
 	        	            	   if(i1 > 15) {
-	        	            		  c = c + 1;
+                                              c = c + 1;
 	        	            	      if (segments[i1].startsWith("\"host\"")) {
 	        	            	    	  host1 = segments[i1].toString().replace("\"host\":\"","");;
 	        	            	    	  host2 = host1.replace("\"","");
@@ -77,14 +77,13 @@ public class Main extends Plugin implements Listener{
 	        	            	    	  finalport = port1;
 	        	            	    	  getLogger().info(finalport);
 	        	            	      };
-	        	            	      if (!(finalhost ==null) || !(finalport ==null)) {
-	        	            	    	    InetSocketAddress socketAddress = new InetSocketAddress(finalhost, 54138);
 
+	        	            	      if (!(finalhost == null) || !(finalport == null)) {
+	        	            	    	    InetSocketAddress socketAddress = new InetSocketAddress(finalhost, 54138);
 	        	            	    	    ServerInfo info = ProxyServer.getInstance().constructServerInfo("duels", socketAddress, "ac", false);
 	        	            	    	    ProxyServer.getInstance().getServers().put("duels", info);
 	        	            	      }
 	        	            	   };
-	      
 	        	            	  } catch (Exception e) {
 	        	            		  getLogger().severe("**** UNHANDLED EXCEPTION ****");
 	        	            		  getLogger().severe(e.toString());
@@ -108,7 +107,7 @@ public class Main extends Plugin implements Listener{
     public void onServerSwitch(ServerSwitchEvent event) {
     	String s = event.getPlayer().getServer().getInfo().getName();
     	if (s == "duels") {
-    		event.getPlayer().sendMessage(ChatColor.YELLOW + "Áóëü ëàñêà çà÷åêàéòå ñåðâåð äóåëåé çàïóñêàºòüñÿ...");
+    		event.getPlayer().sendMessage(ChatColor.YELLOW + "Ð‘ÑƒÐ´ÑŒ Ð»Ð°ÑÐºÐ° Ð·Ð°Ñ‡ÐµÐºÐ°Ð¹Ñ‚Ðµ ÑÐµÑ€Ð²ÐµÑ€ Ð´ÑƒÐµÐ»ÐµÐ¹ Ð·Ð°Ð¿ÑƒÑÐºÐ°Ñ”Ñ‚ÑŒÑÑ...");
     		event.getPlayer().sendMessage(ChatColor.YELLOW + "Please wait the duels server is loading...");
     		new Thread(() -> {
     	    	 try { 
@@ -133,32 +132,32 @@ public class Main extends Plugin implements Listener{
     	              conn1.setRequestProperty("Content-Type", "application/json");  	      
     	              try (BufferedReader reader1 = new BufferedReader(
     	        	      new InputStreamReader(conn1.getInputStream()))) {
-    	        	      for (String line1; (line1 = reader1.readLine()) != null; ) {
+    	        	       for (String line1; (line1 = reader1.readLine()) != null; ) {
     	        	              result1.append(line1);
     	        	              String segments[] = result1.toString().split(",");
     	        	              for (int i1 = 0; i1<30; i1++) {
     	        	            	  try {
     	        	            	   if(i1 > 15) {
-    	        	            		  c = c + 1;
+    	        	            	      c = c + 1;
     	        	            	      if (segments[i1].startsWith("\"host\"")) {
     	        	            	    	  host1 = segments[i1].toString().replace("\"host\":\"","");;
     	        	            	    	  host2 = host1.replace("\"","");
     	        	            	    	  finalhost = host2;
     	        	            	    	  getLogger().info(finalhost);
     	        	            	      };
+
     	        	            	      if (segments[i1].startsWith("\"port\"")) {
     	        	            	    	  port1 = segments[i1].toString().replace("\"port\":","");;
     	        	            	    	  finalport = port1;
     	        	            	    	  getLogger().info(finalport);
     	        	            	      };
-    	        	            	      if (!(finalhost ==null) || !(finalport ==null)) {
-    	        	            	    	    InetSocketAddress socketAddress = new InetSocketAddress(finalhost, 54138);
 
+    	        	            	      if (!(finalhost == null) || !(finalport == null)) {
+    	        	            	    	    InetSocketAddress socketAddress = new InetSocketAddress(finalhost, 54138);
     	        	            	    	    ServerInfo info = ProxyServer.getInstance().constructServerInfo("duels", socketAddress, "ac", false);
     	        	            	    	    ProxyServer.getInstance().getServers().put("duels", info);
     	        	            	      }
     	        	            	   };
-    	      
     	        	            	  } catch (Exception e) {
     	        	            		  getLogger().severe("**** UNHANDLED EXCEPTION ****");
     	        	            		  getLogger().severe(e.toString());
@@ -176,7 +175,6 @@ public class Main extends Plugin implements Listener{
     	    	}
     	    	}).start();
     	}
-    	getLogger().info(s);
     }
     
     @EventHandler
@@ -224,7 +222,6 @@ public class Main extends Plugin implements Listener{
         	            	      };
         	            	      if (!(finalhost ==null) || !(finalport ==null)) {
         	            	    	    InetSocketAddress socketAddress = new InetSocketAddress(finalhost, 54138);
-
         	            	    	    ServerInfo info = ProxyServer.getInstance().constructServerInfo("duels", socketAddress, "ac", false);
         	            	    	    ProxyServer.getInstance().getServers().put("duels", info);
         	            	      }
