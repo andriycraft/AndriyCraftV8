@@ -15,14 +15,15 @@ public class FHubCommand extends Command {
 	@SuppressWarnings("deprecation")
 	@Override
 	public void execute(CommandSender arg0, String[] arg1) {
-		if(arg1.length > 1 || arg1.length == 1) {
-			arg0.sendMessage(ChatColor.RED + "Тут не треба якихось додаткових аргументів");
-			return;
-		}		
 		String nick = arg0.getName();
 		ProxiedPlayer player = ProxyServer.getInstance().getPlayer(nick);
+
+		if(arg1.length > 1 || arg1.length == 1) {
+			arg0.sendMessage(ChatColor.RED + "РўСѓС‚ РЅРµ С‚СЂРµР±Р° СЏРєРёС…РѕСЃСЊ РґРѕРґР°С‚РєРѕРІРёС… Р°СЂРіСѓРјРµРЅС‚С–РІ");
+			return;
+		}		
 		if (player == null) {
-			arg0.sendMessage(ChatColor.RED + "Ви не можете користуватися цією командою з консолі");
+			arg0.sendMessage(ChatColor.RED + "Р’Рё РЅРµ РјРѕР¶РµС‚Рµ РєРѕСЂРёСЃС‚СѓРІР°С‚РёСЃСЏ С†С–С”СЋ РєРѕРјР°РЅРґРѕСЋ Р· РєРѕРЅСЃРѕР»С–");
 			return;
 		}
 		ProxyServer.getInstance().getPluginManager().dispatchCommand(ProxyServer.getInstance().getConsole(), "send " + nick + " lobby");
