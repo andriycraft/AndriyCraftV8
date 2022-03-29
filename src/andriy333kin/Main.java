@@ -50,7 +50,7 @@ public class Main extends Plugin implements Listener{
 	    	              result.append(line);
 	    	          }
 	    	      }
-	    	      TimeUnit.SECONDS.sleep(7);
+	    	      TimeUnit.SECONDS.sleep(6);
 	              StringBuilder result1 = new StringBuilder();
 	              URL url1 = new URL("https://api.exaroton.com/v1/servers/");
 	              HttpURLConnection conn1 = (HttpURLConnection) url1.openConnection();
@@ -95,7 +95,7 @@ public class Main extends Plugin implements Listener{
 	        	              c = 0;
 	        	     }
 	              }
-	              TimeUnit.SECONDS.sleep(3);
+	              TimeUnit.SECONDS.sleep(2);
 	    	} catch (Exception e) {
 	    		getLogger().severe("**** FAILED TO START SERVER ****");
 	    		getLogger().severe(e.toString());
@@ -108,7 +108,7 @@ public class Main extends Plugin implements Listener{
     public void onServerSwitch(ServerSwitchEvent event) {
     	String s = event.getPlayer().getServer().getInfo().getName();
     	if (s == "duels") {
-    		event.getPlayer().sendMessage(ChatColor.YELLOW + "Р‘СѓРґСЊ Р»Р°СЃРєР° Р·Р°С‡РµРєР°Р№С‚Рµ СЃРµСЂРІРµСЂ РґСѓРµР»РµР№ Р·Р°РїСѓСЃРєР°С”С‚СЊСЃСЏ...");
+    		event.getPlayer().sendMessage(ChatColor.YELLOW + "Будь ласка зачекайте сервер дуелей зараз запускається..");
     		event.getPlayer().sendMessage(ChatColor.YELLOW + "Please wait the duels server is loading...");
     		new Thread(() -> {
     	    	 try { 
@@ -124,7 +124,7 @@ public class Main extends Plugin implements Listener{
     	    	              result.append(line);
     	    	          }
     	    	      }
-    	    	      TimeUnit.SECONDS.sleep(7);
+    	    	      TimeUnit.SECONDS.sleep(6);
     	              StringBuilder result1 = new StringBuilder();
     	              URL url1 = new URL("https://api.exaroton.com/v1/servers/");
     	              HttpURLConnection conn1 = (HttpURLConnection) url1.openConnection();
@@ -194,7 +194,7 @@ public class Main extends Plugin implements Listener{
     	              result.append(line);
     	          }
     	      }
-    	      TimeUnit.SECONDS.sleep(7);
+    	      TimeUnit.SECONDS.sleep(6);
               StringBuilder result1 = new StringBuilder();
               URL url1 = new URL("https://api.exaroton.com/v1/servers/");
               HttpURLConnection conn1 = (HttpURLConnection) url1.openConnection();
