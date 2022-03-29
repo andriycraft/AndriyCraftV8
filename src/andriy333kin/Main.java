@@ -34,10 +34,10 @@ public class Main extends Plugin implements Listener{
     public void onEnable() {
         getLogger().info("Im loading");
         getProxy();
-	    ProxyServer.getInstance().getPluginManager().registerListener(this, this);
-	    ProxyServer.getInstance().getPluginManager().registerCommand(this, new FHubCommand(this));
-	    getLogger().info("Im loaded");
-		new Thread(() -> {
+	ProxyServer.getInstance().getPluginManager().registerListener(this, this);
+	ProxyServer.getInstance().getPluginManager().registerCommand(this, new FHubCommand(this));
+	getLogger().info("I was loaded");
+	new Thread(() -> {
 	    	 try { 
 	    	      StringBuilder result = new StringBuilder();
 	    	      URL url = new URL("https://api.exaroton.com/v1/servers/" + serverid + "/start/");
@@ -68,14 +68,14 @@ public class Main extends Plugin implements Listener{
 	        	            	   if(i1 > 15) {
                                               c = c + 1;
 	        	            	      if (segments[i1].startsWith("\"host\"")) {
-	        	            	    	  host1 = segments[i1].toString().replace("\"host\":\"","");;
+	        	            	    	  host1 = segments[i1].toString().replace("\"host\":\"","");
 	        	            	    	  host2 = host1.replace("\"","");
 	        	            	    	  finalhost = host2;
 	        	            	    	  getLogger().info(finalhost);
 	        	            	      };
 
 	        	            	      if (segments[i1].startsWith("\"port\"")) {
-	        	            	    	  port1 = segments[i1].toString().replace("\"port\":","");;
+	        	            	    	  port1 = segments[i1].toString().replace("\"port\":","");
 	        	            	    	  finalport = port1;
 	        	            	    	  getLogger().info(finalport);
 	        	            	      };
@@ -141,14 +141,14 @@ public class Main extends Plugin implements Listener{
     	        	            	   if(i1 > 15) {
     	        	            	      c = c + 1;
     	        	            	      if (segments[i1].startsWith("\"host\"")) {
-    	        	            	    	  host1 = segments[i1].toString().replace("\"host\":\"","");;
+    	        	            	    	  host1 = segments[i1].toString().replace("\"host\":\"","");
     	        	            	    	  host2 = host1.replace("\"","");
     	        	            	    	  finalhost = host2;
     	        	            	    	  getLogger().info(finalhost);
     	        	            	      };
 
     	        	            	      if (segments[i1].startsWith("\"port\"")) {
-    	        	            	    	  port1 = segments[i1].toString().replace("\"port\":","");;
+    	        	            	    	  port1 = segments[i1].toString().replace("\"port\":","");
     	        	            	    	  finalport = port1;
     	        	            	    	  getLogger().info(finalport);
     	        	            	      };
@@ -211,13 +211,13 @@ public class Main extends Plugin implements Listener{
         	            	   if(i1 > 15) {
         	            		  c = c + 1;
         	            	      if (segments[i1].startsWith("\"host\"")) {
-        	            	    	  host1 = segments[i1].toString().replace("\"host\":\"","");;
+        	            	    	  host1 = segments[i1].toString().replace("\"host\":\"","");
         	            	    	  host2 = host1.replace("\"","");
         	            	    	  finalhost = host2;
         	            	    	  getLogger().info(finalhost);
         	            	      };
         	            	      if (segments[i1].startsWith("\"port\"")) {
-        	            	    	  port1 = segments[i1].toString().replace("\"port\":","");;
+        	            	    	  port1 = segments[i1].toString().replace("\"port\":","");
         	            	    	  finalport = port1;
         	            	    	  getLogger().info(finalport);
         	            	      };
