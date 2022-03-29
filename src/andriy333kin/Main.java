@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.config.ServerInfo;
-import net.md_5.bungee.api.event.PreLoginEvent;
+import net.md_5.bungee.api.event.PostLoginEvent;
 import net.md_5.bungee.api.event.ServerSwitchEvent;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.api.plugin.Plugin;
@@ -178,7 +178,7 @@ public class Main extends Plugin implements Listener{
     }
     
     @EventHandler
-    public void onPostLogin(PreLoginEvent event) {
+    public void onPostLogin(PostLoginEvent event) {
     	new Thread(() -> {
     	 try { 
     	      StringBuilder result = new StringBuilder();
