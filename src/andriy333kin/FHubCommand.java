@@ -19,7 +19,7 @@ public class FHubCommand extends Command {
 		ProxiedPlayer player = ProxyServer.getInstance().getPlayer(nick);
 
 		if(arg1.length > 1 || arg1.length == 1) {
-			arg0.sendMessage(ChatColor.RED + "Ви не можете користуватися цією командою з консолі");
+			arg0.sendMessage(ChatColor.RED + "Тут не треба якихось додаткових аргументів");
 			return;
 		}		
 		if (player == null) {
