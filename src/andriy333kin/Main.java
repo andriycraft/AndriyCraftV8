@@ -16,6 +16,8 @@ import net.md_5.bungee.api.plugin.Plugin;
 import net.md_5.bungee.event.EventHandler;
 
 public class Main extends Plugin implements Listener{
+    @SuppressWarnings("deprecation")
+
     public String host;
     public String port;
     public String host1;
@@ -27,8 +29,7 @@ public class Main extends Plugin implements Listener{
     String serverid = "000000000000";
     String token = "00000000000000000000000000000000000000000000000000000000000000000000000000";
     int c = 0;
-    
-    
+
     @Override
     public void onEnable() {
         getLogger().info("Im loading");
@@ -72,6 +73,7 @@ public class Main extends Plugin implements Listener{
 	        	            	    	  finalhost = host2;
 	        	            	    	  getLogger().info(finalhost);
 	        	            	      };
+
 	        	            	      if (segments[i1].startsWith("\"port\"")) {
 	        	            	    	  port1 = segments[i1].toString().replace("\"port\":","");;
 	        	            	    	  finalport = port1;
@@ -101,9 +103,8 @@ public class Main extends Plugin implements Listener{
 	    	}
 	    	}).start();
     }
-    
-	@SuppressWarnings("deprecation")
-	@EventHandler
+
+    @EventHandler
     public void onServerSwitch(ServerSwitchEvent event) {
     	String s = event.getPlayer().getServer().getInfo().getName();
     	if (s == "duels") {
